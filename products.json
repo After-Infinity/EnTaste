@@ -1,0 +1,96 @@
+{
+ "shop": "En’taste",
+ "items": [
+  {
+   "id": "p1",
+   "name": "Mango",
+   "price": "500g  ₹200\n250g  ₹100",
+   "desc": "മാങ്ങ (Pickle)",
+   "img": ""
+  },
+  {
+   "id": "p2",
+   "name": "Lemon",
+   "price": "500g  ₹200\n250g  ₹100",
+   "desc": "നാരങ്ങ (Pickle)",
+   "img": ""
+  },
+  {
+   "id": "p3",
+   "name": "Lemon Dates",
+   "price": "500g  ₹250\n250g  ₹125",
+   "desc": "ഈന്തപ്പഴം നാരങ്ങ (Pickle)",
+   "img": ""
+  },
+  {
+   "id": "p4",
+   "name": "Prawns",
+   "price": "500g  ₹550\n250g  ₹275",
+   "desc": "ചെമ്മീൻ (Pickle)",
+   "img": ""
+  },
+  {
+   "id": "p5",
+   "name": "Fish",
+   "price": "500g  ₹550\n250g  ₹275",
+   "desc": "മീൻ (Pickle)",
+   "img": ""
+  },
+  {
+   "id": "p6",
+   "name": "Beef",
+   "price": "500g  ₹550\n250g  ₹275",
+   "desc": "ബീഫ് (Pickle)",
+   "img": ""
+  },
+  {
+   "id": "p7",
+   "name": "Bitter Gourd",
+   "price": "500g  ₹150\n250g  ₹75",
+   "desc": "പാവക്ക (Pickle)",
+   "img": ""
+  },
+  {
+   "id": "p8",
+   "name": "Dates Kondattam",
+   "price": "500g  ₹250\n250g  ₹150",
+   "desc": "ഈന്തപ്പഴം കൊണ്ടാട്ടം (Pickle)",
+   "img": ""
+  },
+  {
+   "id": "p9",
+   "name": "Tender Mango",
+   "price": "500g  ₹300\n250g  ₹150",
+   "desc": "കണ്ണിമാങ്ങ (Pickle)",
+   "img": ""
+  },
+  {
+   "id": "p10",
+   "name": "Clam",
+   "price": "500g  ₹400\n250g  ₹200",
+   "desc": "കക്ക (Pickle)",
+   "img": ""
+  },
+  {
+   "id": "p11",
+   "name": "Sambar Powder",
+   "price": "500g  ₹250\n250g  ₹125",
+   "desc": "സാമ്പാർ പൊടി (Condiment)",
+   "img": ""
+  },
+  {
+   "id": "p12",
+   "name": "Coconut Chutney Powder",
+   "price": "500g  ₹300\n250g  ₹150",
+   "desc": "തേങ്ങാ ചമ്മന്തിപൊടി (Condiment)",
+   "img": ""
+  },
+  {
+   "id": "p13",
+   "name": "Prawns Chutney Powder",
+   "price": "500g  ₹450\n250g  ₹225",
+   "desc": "ചെമ്മീൻ ചമ്മന്തിപൊടി (Condiment)",
+   "img": ""
+  }
+ ]
+}

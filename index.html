@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>En’taste</title>
+<meta name="theme-color" content="#0f0e0e">
+<style>
+:root{--bg:#0f0e0e;--panel:#161316;--ink:#fff;--mute:rgba(255,255,255,.62);--line:rgba(255,255,255,.15);--glass:rgba(255,255,255,.06);--acc:#fe2e4b;--accink:#fff;--danger:#fe2e4b;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+body{margin:0;min-height:100vh;color:var(--ink);font:400 16px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;background:radial-gradient(75% 50% at 0% 14%,rgba(254,46,75,.5),transparent 70%),radial-gradient(70% 40% at 100% 100%,rgba(254,46,75,.2),transparent 70%),var(--bg);background-attachment:fixed}
+.wrap{max-width:720px;margin:0 auto;padding:0 14px 96px}
+header{padding:20px 0 6px}
+h1{margin:0;font-size:24px;font-weight:500;letter-spacing:-.03em;line-height:1.1;background:linear-gradient(90deg,#fff 10%,#ffb3bf 55%,#fe2e4b);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.sub{color:var(--mute);font-size:14px;margin-top:4px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;padding:6px 0 10px}
+input,textarea{width:100%;font:inherit;color:var(--ink);background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:13px 16px;outline:none}
+input[type=search]{-webkit-appearance:none;appearance:none;height:40px;padding:0 14px 0 38px;font-size:15px;border-radius:12px;background:#1a1719 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat 13px 50%/16px}
+input[type=file]{padding:10px 14px;border-radius:999px}
+input::placeholder,textarea::placeholder{color:var(--mute)}
+input:focus,textarea:focus{border-color:var(--acc)}
+textarea{resize:vertical;min-height:70px}
+label{display:block;font-size:13px;font-weight:500;color:var(--mute);margin:14px 0 6px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:560px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--glass);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.ph{aspect-ratio:1/1;background:var(--panel);display:grid;place-items:center;font-size:44px;font-weight:600;color:rgba(254,46,75,.75);overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.body{padding:12px 14px 12px;flex:1;display:flex;flex-direction:column}
+.name{font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.prices{margin-top:auto;padding-top:10px}
+.pr{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:6px 0;border-top:1px solid var(--line);font-size:14px}
+.pr span{color:var(--mute)}
+.pr b{color:var(--acc);font-weight:600;font-size:16px;white-space:nowrap}
+.desc{color:var(--mute);font-size:13px;margin-top:4px;overflow-wrap:anywhere}
+.acts{display:flex;border-top:1px solid var(--line)}
+.acts button{flex:1;border:0;background:none;color:var(--ink);font:500 14px "Helvetica Neue",Helvetica,Arial,sans-serif;padding:13px;cursor:pointer}
+.acts button+button{border-left:1px solid var(--line);color:var(--acc)}
+.btn{border:0;border-radius:999px;padding:13px 18px;font:600 15px "Helvetica Neue",Helvetica,Arial,sans-serif;background:var(--acc);color:var(--accink);cursor:pointer}
+.btn.ghost{background:var(--glass);color:var(--ink);border:1px solid var(--line)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.row .btn{flex:1;white-space:nowrap}
+.empty{text-align:center;color:var(--mute);padding:48px 16px}
+.top{display:flex;align-items:center;justify-content:space-between;padding:20px 0 4px;gap:12px}
+a{color:var(--acc);font-weight:600;text-decoration:none}
+footer{text-align:center;padding:28px 0 8px;font-size:13px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));box-shadow:0 8px 24px rgba(254,46,75,.45);padding:16px 22px;z-index:6}
+dialog{width:min(520px,100%);max-width:100%;margin:auto auto 0;border:1px solid var(--line);border-bottom:0;border-radius:26px 26px 0 0;background:var(--panel);color:var(--ink);padding:20px 16px calc(18px + env(safe-area-inset-bottom,0px));max-height:92vh}
+dialog::backdrop{background:rgba(0,0,0,.65)}
+dialog h2{margin:0 0 4px;font-size:22px;font-weight:500;letter-spacing:-.02em}
+.pv{width:96px;height:96px;border-radius:16px;background:var(--panel);object-fit:cover;display:block;margin-top:8px}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#fff;color:#0f0e0e;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:500;opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
+#toast.on{opacity:1}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<dialog id="dlg">
+  <h2 id="dt">Add product</h2>
+  <label for="f-name">Product name</label>
+  <input id="f-name" maxlength="80" autocomplete="off">
+  <label for="f-price">Price (one per line, e.g. 500g  ₹200)</label>
+  <textarea id="f-price" maxlength="80" style="min-height:62px"></textarea>
+  <label for="f-desc">Details (optional)</label>
+  <textarea id="f-desc" maxlength="200"></textarea>
+  <label for="f-img">Photo (optional)</label>
+  <input id="f-img" type="file" accept="image/*">
+  <img id="pv" class="pv" alt="" hidden>
+  <div class="row"><button class="btn ghost" id="cancel">Cancel</button><button class="btn" id="save">Save product</button></div>
+</dialog>
+<div id="toast"></div>
+
+<script>
+const KEY = 'listing_v1';
+const SAMPLE = { shop: 'En’taste', items: [
+  { id: 's1', name: 'Sample product', price: '500g  ₹199', desc: 'Add your products from the edit page.', img: '' }
+]};
+let db = SAMPLE, q = '', editId = null, imgData = '';
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const isAdmin = () => location.hash === '#admin';
+
+function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('on'), 1800); }
+
+function persist() {
+  try { localStorage.setItem(KEY, JSON.stringify(db)); return true; }
+  catch (e) { alert('Storage is full or blocked. Try smaller photos, or export a backup.'); return false; }
+}
+
+const PUB = 'listing_pub_v1';
+const hash = t => { let h = 0; for (let i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) | 0; return String(h); };
+async function load() {
+  let local = null;
+  try { const s = localStorage.getItem(KEY); if (s) local = JSON.parse(s); } catch (e) {}
+  try {
+    const r = await fetch('products.json', { cache: 'no-store' });
+    if (r.ok) {
+      const t = await r.text(), d = JSON.parse(t), h = hash(t);
+      if (!Array.isArray(d.items)) throw 0;
+      let seen = null; try { seen = localStorage.getItem(PUB); } catch (e) {}
+      if (!local || seen !== h) {
+        db = { shop: d.shop || 'En’taste', items: d.items };
+        try { localStorage.setItem(PUB, h); } catch (e) {}
+        persist(); return;
+      }
+    }
+  } catch (e) {}
+  db = local || JSON.parse(JSON.stringify(SAMPLE));
+}
+
+function priceRows(t) {
+  return String(t || '').split('\n').map(l => l.trim()).filter(Boolean).map(l => {
+    const m = l.match(/^(.*?\S)\s+(₹?\s?\d[\d,.]*.*)$/);
+    return m ? `<div class="pr"><span>${esc(m[1])}</span><b>${esc(m[2])}</b></div>` : `<div class="pr"><b>${esc(l)}</b></div>`;
+  }).join('');
+}
+
+function cardHTML(p, admin) {
+  const ph = p.img ? `<img src="${esc(p.img)}" alt="" loading="lazy">` : esc((p.name || '?').trim().charAt(0).toUpperCase());
+  return `<article class="card"><div class="ph">${ph}</div><div class="body">
+    <div class="name">${esc(p.name)}</div>
+    ${p.desc ? `<div class="desc">${esc(p.desc)}</div>` : ''}
+    <div class="prices">${priceRows(p.price)}</div></div>
+    ${admin ? `<div class="acts"><button data-edit="${p.id}">Edit</button><button data-del="${p.id}">Delete</button></div>` : ''}</article>`;
+}
+
+function renderList() {
+  const t = q.trim().toLowerCase();
+  const items = db.items.filter(p => !t || [p.name, p.price, p.desc].join(' ').toLowerCase().includes(t));
+  const admin = isAdmin();
+  $('#list').innerHTML = items.length
+    ? `<div class="grid">${items.map(p => cardHTML(p, admin)).join('')}</div>`
+    : `<div class="empty">${db.items.length ? 'No products match your search.' : (admin ? 'No products yet. Tap “Add product”.' : 'No products to show yet.')}</div>`;
+}
+
+function render() {
+  const admin = isAdmin();
+  q = '';
+  document.title = admin ? 'Manage products' : db.shop;
+  $('#app').innerHTML = admin ? `
+    <div class="top"><h1>Manage products</h1><a href="#">View shop</a></div>
+    <div class="sub">Edits save on this device. Tap Export file, then upload products.json to GitHub to publish.</div>
+    <label for="shop">Shop name</label>
+    <input id="shop" value="${esc(db.shop)}" maxlength="40">
+    <div class="bar" style="margin-top:12px"><input id="s" type="search" placeholder="Search products" aria-label="Search products"></div>
+    <div id="list"></div>
+    <div class="row">
+      <button class="btn ghost" id="exp">Export file</button>
+      <button class="btn ghost" id="rst">Reload published</button>
+    </div>
+    <button class="btn fab" id="add">+ Add product</button>`
+  : `
+    <header><h1>${esc(db.shop)}</h1><div class="sub">${db.items.length} product${db.items.length === 1 ? '' : 's'}</div></header>
+    <div class="bar"><input id="s" type="search" placeholder="Search products" aria-label="Search products"></div>
+    <div id="list"></div>
+    `;
+  renderList();
+  $('#s').oninput = e => { q = e.target.value; renderList(); };
+  if (admin) wireAdmin();
+}
+
+function wireAdmin() {
+  $('#shop').oninput = e => { db.shop = e.target.value || 'En’taste'; persist(); };
+  $('#add').onclick = () => openForm(null);
+  $('#list').onclick = e => {
+    const ed = e.target.closest('[data-edit]'), de = e.target.closest('[data-del]');
+    if (ed) openForm(ed.dataset.edit);
+    if (de) {
+      const p = db.items.find(x => x.id === de.dataset.del);
+      if (p && confirm(`Delete “${p.name}”?`)) { db.items = db.items.filter(x => x.id !== p.id); persist(); renderList(); toast('Deleted'); }
+    }
+  };
+  $('#exp').onclick = () => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(db)], { type: 'application/json' }));
+    a.download = 'products.json'; a.click(); toast('Saved products.json');
+  };
+  $('#rst').onclick = () => {
+    if (confirm('Discard changes on this device and reload products.json?')) { try { localStorage.removeItem(KEY); localStorage.removeItem(PUB); } catch (e) {} load().then(render); }
+  };
+}
+
+
+function openForm(id) {
+  editId = id;
+  const p = id ? db.items.find(x => x.id === id) : null;
+  $('#dt').textContent = p ? 'Edit product' : 'Add product';
+  $('#f-name').value = p ? p.name : '';
+  $('#f-price').value = p ? p.price : '';
+  $('#f-desc').value = p ? p.desc : '';
+  $('#f-img').value = '';
+  imgData = p ? p.img : '';
+  showPv();
+  $('#dlg').showModal();
+}
+function showPv() { const pv = $('#pv'); pv.hidden = !imgData; if (imgData) pv.src = imgData; }
+
+$('#f-img').onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    const i = new Image();
+    i.onload = () => {
+      const s = Math.min(1, 600 / Math.max(i.width, i.height)), c = document.createElement('canvas');
+      c.width = Math.round(i.width * s); c.height = Math.round(i.height * s);
+      c.getContext('2d').drawImage(i, 0, 0, c.width, c.height);
+      imgData = c.toDataURL('image/jpeg', .75); showPv();
+    };
+    i.src = r.result;
+  };
+  r.readAsDataURL(f);
+};
+
+$('#cancel').onclick = () => $('#dlg').close();
+$('#save').onclick = () => {
+  const name = $('#f-name').value.trim(), price = $('#f-price').value.trim();
+  if (!name) { $('#f-name').focus(); return toast('Enter a product name'); }
+  if (!price) { $('#f-price').focus(); return toast('Enter a price'); }
+  const rec = { id: editId || 'p' + Date.now().toString(36), name, price, desc: $('#f-desc').value.trim(), img: imgData };
+  if (editId) db.items = db.items.map(x => x.id === editId ? rec : x); else db.items.unshift(rec);
+  if (persist()) { $('#dlg').close(); renderList(); toast(editId ? 'Changes saved' : 'Product added'); }
+};
+
+window.addEventListener('hashchange', render);
+load().then(render);
+</script>
+</body>
+</html>
