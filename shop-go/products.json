@@ -1,0 +1,5 @@
+[
+  { "name": "Rice", "price_per_kg": 60 },
+  { "name": "Sugar", "price_per_kg": 44 },
+  { "name": "Toor Dal", "price_per_kg": 150 }
+]

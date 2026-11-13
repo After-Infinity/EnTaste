@@ -1,0 +1,9 @@
+{
+  "shop_name": "EnTaste",
+  "upi_id": "aminbluestack@okhdfcbank",
+  "whatsapp_number": "919074259743",
+  "public_base_url": "https://your-public-url.example.com",
+  "panel_password": "test",
+  "listen": ":8000",
+  "allow_self_test": true
+}
